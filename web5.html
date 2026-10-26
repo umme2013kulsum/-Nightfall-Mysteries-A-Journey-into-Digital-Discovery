@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mission Complete</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"> 
+
+<style>
+     *
+    {
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Poppins,sans-serif;
+    }
+
+   body
+    {
+        min-height:100vh;
+        overflow-x:hidden;
+        overflow-y:auto;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        padding:30px 20px;
+
+        background:
+        radial-gradient(circle at top,#1b2d5a,#0b1020,#000);
+
+        color:white;
+    }
+
+    .container
+    {
+        text-align:center;
+        z-index:2;
+
+        width:100%;
+        max-width:900px;
+
+        padding:20px;
+    }
+
+    h1
+    {
+        font-size:clamp(32px,7vw,60px);
+        letter-spacing:5px;
+        margin-bottom:30px;
+        color:#ffe76b;
+        text-shadow:
+        0 0 10px #ffe76b,
+        0 0 25px gold,
+        0 0 50px gold;
+    }
+
+    p
+    {
+        font-size:clamp(16px,3vw,22px);
+        line-height:1.8;
+        opacity:.9;
+    }
+
+    .star
+    {
+        position:fixed;
+        left:50%;
+        top:65%;
+        transform:translate(-50%,-50%) scale(.3);
+        font-size:120px;
+        opacity:0;
+        animation:reward 8s forwards ease-in-out;
+        filter:
+        drop-shadow(0 0 10px gold)
+        drop-shadow(0 0 30px gold)
+        drop-shadow(0 0 60px #fff176);
+    }
+
+    @keyframes reward
+    {
+
+        0%
+        {
+            opacity:0;
+            transform:
+            translate(-50%,-50%)
+            scale(.2)
+            rotate(0deg);
+        }
+
+        15%
+        {
+            opacity:1;
+            transform:
+            translate(-50%,-50%)
+            scale(2.2)
+            rotate(180deg);
+        }
+
+        35%
+        {
+            transform:
+            translate(-50%,-50%)
+            scale(.8)
+            rotate(360deg);
+        }
+
+        55%
+        {
+            transform:
+            translate(-50%,-50%)
+            scale(1.6)
+            rotate(540deg);
+        }
+
+        75%
+        {
+            transform:
+            translate(-50%,-50%)
+            scale(.9)
+            rotate(720deg);
+        }
+
+        100%
+        {
+            opacity:1;
+            left:40px;
+            top:40px;
+            transform:
+            translate(0,0)
+            scale(.55)
+            rotate(1080deg);
+        }
+
+    }
+
+    .sparkle
+    {
+        position:absolute;
+        width:6px;
+        height:6px;
+        background:white;
+        border-radius:50%;
+        animation:twinkle 2s infinite;
+    }
+
+    @keyframes twinkle
+    {
+
+        0%,100%
+        {
+            opacity:.2;
+            transform:scale(.4);
+        }
+
+        50%
+        {
+            opacity:1;
+            transform:scale(1.5);
+        }
+
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+
+/* Large Tablets */
+@media (max-width:1024px)
+{
+
+    body
+    {
+        padding:30px;
+    }
+
+
+    .container
+    {
+        max-width:750px;
+    }
+
+
+    h1
+    {
+        font-size:clamp(40px,7vw,55px);
+        letter-spacing:4px;
+    }
+
+
+    p
+    {
+        font-size:20px;
+    }
+
+
+    .star
+    {
+        font-size:100px;
+    }
+
+}
+
+
+
+/* Tablets + Mobile */
+@media (max-width:768px)
+{
+
+    body
+    {
+        padding:20px;
+    }
+
+
+    .container
+    {
+        padding:15px;
+    }
+
+
+    h1
+    {
+        letter-spacing:2px;
+        margin-bottom:20px;
+    }
+
+
+    p
+    {
+        line-height:1.6;
+    }
+
+
+    .star
+    {
+        font-size:75px;
+    }
+
+
+}
+
+
+
+/* Small Phones */
+@media (max-width:480px)
+{
+
+    body
+    {
+        padding:15px;
+    }
+
+
+    .container
+    {
+        padding:10px;
+    }
+
+
+    h1
+    {
+        font-size:32px;
+        letter-spacing:1px;
+    }
+
+
+    p
+    {
+        font-size:16px;
+    }
+
+
+    .star
+    {
+        font-size:55px;
+
+        animation-name:rewardMobile;
+    }
+
+
+}
+
+
+
+/* Mobile Star Animation Fix */
+
+@keyframes rewardMobile
+{
+
+    0%
+    {
+        opacity:0;
+
+        transform:
+        translate(-50%,-50%)
+        scale(.2)
+        rotate(0deg);
+    }
+
+
+    20%
+    {
+        opacity:1;
+
+        transform:
+        translate(-50%,-50%)
+        scale(1.5)
+        rotate(360deg);
+    }
+
+
+    100%
+    {
+        opacity:1;
+
+        left:20px;
+        top:20px;
+
+        transform:
+        translate(0,0)
+        scale(.45)
+        rotate(720deg);
+    }
+
+}
+
+
+
+/* Extra Small Devices */
+
+@media (max-width:360px)
+{
+
+    h1
+    {
+        font-size:28px;
+    }
+
+
+    p
+    {
+        font-size:15px;
+    }
+
+
+    .star
+    {
+        font-size:45px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>MISSION COMPLETE</h1>
+
+        <p>
+
+            You explored every hidden room.<br><br>
+
+            Thank you for becoming part of <b>Nightfall.</b><br><br>
+
+            <b>This is for you.</b>
+
+        </p>
+
+    </div>
+
+    <div class="star">⭐</div>
+
+    <script>
+         for(let i=0;i<120;i++){
+
+        const s=document.createElement("div");
+
+        s.className="sparkle";
+
+        s.style.left=Math.random()*100+"vw";
+        s.style.top=Math.random()*100+"vh";
+
+        s.style.animationDelay=Math.random()*2+"s";
+
+        document.body.appendChild(s);
+
+        }
+    </script>
+</body>
+</html>

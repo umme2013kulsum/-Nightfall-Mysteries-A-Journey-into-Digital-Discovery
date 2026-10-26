@@ -1,0 +1,1540 @@
+html{
+
+overflow-x:hidden;
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+overflow-x:hidden;
+
+}
+.mine
+{
+    margin: 0 auto;
+display: block;
+}
+*
+    {
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Poppins,sans-serif;
+    }
+
+   body
+    {
+        background:linear-gradient(135deg,#dbe9ff,#e9d7ff,#ffd6e7);
+        animation:fadeIn 1s ease;
+        overflow-x:hidden;
+        min-height:100vh;
+        width:100%;
+    }
+
+    @keyframes fadeIn
+    {
+        from
+        {
+            opacity:0;
+            transform:translateY(25px);
+        }
+
+        to
+        {
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+
+    p
+    {
+        font-size:clamp(34px,6vw,58px);
+        text-align:center;
+        margin-top:40px;
+        color:#ff8db8;
+        text-shadow:
+        0 0 10px #ff9ec4,
+        0 0 20px #ff9ec4,
+        0 0 35px #ff9ec4;
+        font-weight:bold;
+    }
+
+    .subtitle
+    {
+        text-align:center;
+        margin-top:10px;
+        color:#9a9999;
+        font-size:clamp(15px,2.5vw,18px);
+        margin-bottom:25px;
+    }
+
+    button
+    {
+        min-height:48px;
+        display:inline-block;
+        padding:14px 30px;
+        margin:10px;
+        border:none;
+        border-radius:50px;
+        font-size:17px;
+        cursor:pointer;
+        background:linear-gradient(135deg,#ffd6e7,#bde0fe,#e0bbff);
+        transition:.35s;
+        box-shadow:0 10px 25px rgba(0,0,0,.15);
+        font-weight:bold;
+       
+    }
+
+    button:hover
+    {
+        transform:translateY(-6px) scale(1.05);
+        box-shadow:0 15px 35px rgba(0,0,0,.25);
+    }
+
+    .controls
+    {
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    #search
+    {
+        width:min(90%,420px);
+        max-width:90%;
+        padding:13px;
+        border:none;
+        border-radius:50px;
+        outline:none;
+        font-size:16px;
+        text-align:center;
+        box-shadow:0 10px 25px rgba(0,0,0,.15);
+        margin-bottom:20px;
+    }
+
+    .counter
+    {
+       text-align:center;
+        font-size:clamp(16px,2.8vw,22px);
+        margin-bottom:35px;
+        color:#9a9999;
+        font-weight:600;
+    }
+
+    .main
+    {
+         display:flex;
+        width:100%;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+        padding:25px;
+
+max-width:1600px;
+
+margin:auto;
+    }
+
+    .col
+    {
+        flex:1 1 220px;
+        max-width:260px;
+    }
+
+    .col a
+    {
+        display:block;
+        position:relative;
+        aspect-ratio:3/4;
+        min-height:300px;
+        overflow:hidden;
+        border-radius:18px;
+        text-decoration:none;
+        box-shadow:0 15px 35px rgba(0,0,0,.25);
+        transition:.35s;
+    }
+
+    .col a:hover
+    {
+        transform:translateY(-10px);
+    }
+
+    .bg-img
+    {
+        position:absolute;
+        inset:0;
+        background-size:cover;
+        background-position:center;
+        transition:.5s;
+    }
+
+    .col:hover .bg-img
+    {
+        transform:scale(1.12);
+    }
+
+    .col a
+    {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .col a:hover
+    {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 45px rgba(0,0,0,.35);
+    }
+
+    .col a::after
+    {
+        content:"";
+        position:absolute;
+        inset:0;
+        background:linear-gradient
+        (to top,
+            rgba(0,0,0,.82),
+            rgba(0,0,0,.05)
+        );
+        z-index:1;
+    }
+
+    .align-bottom
+    {
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        padding:20px;
+        z-index:2;
+    }
+
+    h2
+    {
+        color:white;
+        font-size:13px;
+        letter-spacing:1px;
+        text-align: center;
+    }
+footer{
+
+padding:35px 20px;
+
+}
+
+footer h2{
+
+font-size:20px;
+
+}
+
+footer p{
+
+font-size:15px;
+
+}
+    @media(max-width:700px)
+    {
+
+        p
+        {
+            font-size:38px;
+        }
+
+        .col
+        {
+            width:90%;
+            max-width:320px;
+        }
+
+        button
+        {
+            width:90%;
+        }
+
+    }
+    /* -------------Navbar ------------*/
+
+    .navbar
+    {        
+        position: relative;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 40px;
+        background:rgba(255,255,255,.15);
+        backdrop-filter:blur(15px);
+        box-shadow:0 10px 25px rgba(0,0,0,.15);
+        z-index:999;
+    }
+
+    .logo
+    {
+        font-size:24px;
+        font-weight:bold;
+        color:#444;
+    }
+
+    .nav-links
+    {
+        display:flex;
+        align-items:center;
+        gap:25px;
+    }
+
+    .nav-links a
+    {
+        text-decoration:none;
+        font-weight:600;
+        color:#444;
+        transition:.3s;
+    }
+
+    .nav-links a:hover
+    {
+        color:#ff6fa9;
+    }
+
+    #darkModeBtn
+    {
+        border:none;
+        background:white;
+        padding:10px 15px;
+        border-radius:30px;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    #darkModeBtn:hover
+    {
+        transform:scale(1.1);
+    }
+
+    /* --------------Dark mode -----------------*/
+
+    body.dark 
+    {
+        background: #0f172a;
+        color: white;
+        transition: 0.4s;
+    }
+
+    body.dark .navbar 
+    {
+        background: rgba(20,20,20,0.8);
+    }
+
+    body.dark .logo,
+    body.dark .nav-links a,
+    body.dark h2,
+    body.dark h3 
+    {
+        color: white;
+    }
+
+    body.dark button 
+    {
+        background: linear-gradient(135deg,#333,#555);
+        color: white;
+    }
+
+    body.dark
+    {
+        background:
+        radial-gradient(circle at top,
+            #243b6a,
+            #131d38 35%,
+            #090b16 70%,
+            #030409 100%);
+        color:white;
+    }
+
+    /*------------------- Favorite Button -------------*/
+
+    .favorite
+    {
+        position:absolute;
+        top:12px;
+        right:12px;
+        width:38px;
+        height:38px;
+        border-radius:50%;
+        background:rgba(255,255,255,.85);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:20px;
+        cursor:pointer;
+        transition:.3s;
+        z-index:20;
+    }
+
+    .favorite:hover
+    {
+        transform:scale(1.15);
+        background:white;
+    }
+
+    #musicBtn
+    {
+        border:none;
+        background:white;
+        padding:10px 15px;
+        border-radius:30px;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    #musicBtn:hover
+    {
+        transform:scale(1.1);
+    }
+
+    /* -------------------- Stars ---------------------- */
+
+    #stars
+    {
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        overflow:hidden;
+        pointer-events:none;
+        z-index:-1;
+    }
+
+    /* --------------- Colourful Stars ----------------------- */
+
+    .star
+    {
+        position:absolute;
+        width:2px;
+        height:2px;
+        border-radius:50%;
+        opacity:0.8;
+        animation:twinkle linear infinite, floatStars linear infinite;
+    }
+
+    .star
+    {
+        box-shadow:0 0 6px currentColor;
+    }
+
+    @keyframes twinkle
+    {
+        0%,100%{opacity:0.2;}
+        50%{opacity:1;}
+    }
+
+
+    @keyframes floatStars
+    {
+        0%{transform:translateY(0);}
+        100%{transform:translateY(-120px);}
+    }
+
+    @keyframes floatStars
+    {
+        0%
+        {
+            transform:translateY(0);
+        }
+
+        100%
+        {
+            transform:translateY(-120px);
+        }
+    }
+
+    /* -------------------- Shootoing Stars---------------------- */
+
+    .shooting-star
+    {
+        position:fixed;
+        top:-50px;
+        left:-100px;
+        width:150px;
+        height:2px;
+        background:linear-gradient(to right,
+        rgba(255,255,255,0),
+        white);
+        transform:rotate(-45deg);
+        z-index:1;
+        pointer-events:none;
+        animation:shoot 2s linear forwards;
+    }
+
+    @keyframes shoot
+    {
+        0%
+        {
+            transform:translate(0,0) rotate(-45deg);
+            opacity:1;
+        }
+        100%
+        {
+            transform:translate(120vw,120vh) rotate(-45deg);
+            opacity:0;
+        }
+    }
+
+    /* ================= REALISTIC MOON ================= */
+
+    .moon
+    {
+        position:fixed;
+        top:110px;
+    right:40px;
+        width:180px;
+        height:180px;
+        border-radius:50%;
+        background:
+            /* ---Large craters ---*/
+            radial-gradient(circle at 22% 24%, rgba(150,140,120,.45) 0 10px, transparent 11px),
+            radial-gradient(circle at 70% 30%, rgba(150,140,120,.40) 0 13px, transparent 14px),
+            radial-gradient(circle at 40% 70%, rgba(145,135,115,.45) 0 11px, transparent 12px),
+            radial-gradient(circle at 78% 72%, rgba(145,135,115,.35) 0 8px, transparent 9px),
+
+            /* ---Medium craters ---*/
+            radial-gradient(circle at 35% 40%, rgba(160,150,130,.30) 0 7px, transparent 8px),
+            radial-gradient(circle at 58% 48%, rgba(160,150,130,.28) 0 6px, transparent 7px),
+            radial-gradient(circle at 27% 58%, rgba(160,150,130,.28) 0 6px, transparent 7px),
+            radial-gradient(circle at 82% 48%, rgba(160,150,130,.30) 0 6px, transparent 7px),
+            radial-gradient(circle at 60% 82%, rgba(160,150,130,.28) 0 5px, transparent 6px),
+            radial-gradient(circle at 18% 78%, rgba(160,150,130,.30) 0 5px, transparent 6px),
+
+            /* ---Small craters--- */
+            radial-gradient(circle at 48% 20%, rgba(170,160,140,.25) 0 3px, transparent 4px),
+            radial-gradient(circle at 12% 42%, rgba(170,160,140,.25) 0 2px, transparent 3px),
+            radial-gradient(circle at 86% 20%, rgba(170,160,140,.25) 0 3px, transparent 4px),
+            radial-gradient(circle at 50% 58%, rgba(170,160,140,.25) 0 2px, transparent 3px),
+            radial-gradient(circle at 72% 56%, rgba(170,160,140,.25) 0 2px, transparent 3px),
+            radial-gradient(circle at 38% 88%, rgba(170,160,140,.25) 0 3px, transparent 4px),
+
+            /*--- Moon surface--- */
+            radial-gradient(circle at 35% 30%,
+                #ffffff 0%,
+                #f6f3e8 22%,
+                #e8e3d3 55%,
+                #d2ccb8 80%,
+                #bab3a3 100%);
+
+        box-shadow:
+            0 0 25px rgba(255,255,255,.9),
+            0 0 70px rgba(255,245,200,.8),
+            0 0 140px rgba(255,240,180,.5);
+
+        animation:
+            moonFloat 10s ease-in-out infinite,
+            moonGlow 5s ease-in-out infinite;
+
+        z-index:1;
+    }
+
+    .moon::before
+    {
+        content:"";
+        position:absolute;
+        inset:0;
+        border-radius:50%;
+        box-shadow:
+            inset -10px -12px 18px rgba(80,80,80,.35),
+            inset 8px 8px 18px rgba(255,255,255,.6);
+    }
+
+    .navbar,
+    .main,
+    .controls,
+    footer,
+    p,
+    .subtitle
+    {
+        position:relative;
+        z-index:2;
+    }
+
+    .moon
+    {
+        position:fixed;
+        top:70px;
+        right:70px;
+        width:180px;
+        height:180px;
+        border-radius:50%;
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-20px) scale(0.8);
+        transition:all .7s ease;
+    }
+
+    body.dark .moon
+    {
+        opacity:1;
+        visibility:visible;
+        transform:translateY(0) scale(1);
+    }
+
+    body.dark .moon
+    {
+        animation:
+            moonRise 1.5s ease,
+            moonFloat 10s ease-in-out infinite,
+            moonGlow 5s ease-in-out infinite;
+    }
+
+    @keyframes moonRise
+    {
+        from
+        {
+            opacity:0;
+            transform:translateY(60px) scale(.6);
+        }
+
+        to
+        {
+            opacity:1;
+            transform:translateY(0) scale(1);
+        }
+    }
+
+    /* =======----------========== DREAMY CLOUDS ========------------========= */
+
+    .cloud
+    {
+        position:fixed;
+        height:65px;
+        width:180px;
+        border-radius:100px;
+        background:
+        linear-gradient(
+        90deg,
+        rgba(255,190,225,.25),
+        rgba(255,225,245,.45),
+        rgba(250,250,255,.5),
+        rgba(210,235,255,.35)
+        );
+        filter:blur(2px);
+        opacity:0;
+        visibility:hidden;
+        transition:opacity .8s;
+        z-index:0;
+    }
+
+    .cloud::before,
+    .cloud::after
+    {
+        content:"";
+        position:absolute;
+        background:inherit;
+        border-radius:50%;
+    }
+
+    .cloud::before
+    {
+        width:80px;
+        height:80px;
+        left:20px;
+        top:-30px;
+    }
+
+    .cloud::after
+    {
+        width:95px;
+        height:95px;
+        right:18px;
+        top:-40px;
+    }
+
+    .cloud span
+    {
+        position:absolute;
+        width:70px;
+        height:70px;
+        background:inherit;
+        border-radius:50%;
+        left:70px;
+        top:-18px;
+    }
+
+    .cloud1
+    {
+        top:110px;
+        left:-250px;
+        animation:cloudMove1 65s linear infinite;
+    }
+
+    .cloud2
+    {
+        top:250px;
+        left:-350px;
+        width:240px;
+        animation:cloudMove2 85s linear infinite;
+    }
+
+    .cloud3
+    {
+        top:430px;
+        left:-280px;
+        width:200px;
+        animation:cloudMove3 75s linear infinite;
+    }
+
+    body.dark .cloud
+    {
+        opacity:1;
+        visibility:visible;
+    }
+
+    @keyframes cloudMove1
+    {
+        from{transform:translateX(0);}
+        to{transform:translateX(calc(100vw + 500px));}
+    }
+
+    @keyframes cloudMove2
+    {
+        from{transform:translateX(0);}
+        to{transform:translateX(calc(100vw + 650px));}
+    }
+
+    @keyframes cloudMove3
+    {
+        from{transform:translateX(0);}
+        to{transform:translateX(calc(100vw + 550px));}
+    }
+
+    /*------------AURORA------------*/
+    .aurora
+    {
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:45vh;
+        background:
+        linear-gradient(120deg,
+        transparent,
+        rgba(180,140,255,.18),
+        rgba(120,220,255,.12),
+        rgba(255,180,220,.16),
+        transparent);
+        filter:blur(45px);
+        animation:auroraMove 18s ease-in-out infinite;
+        opacity:0;
+        pointer-events:none;
+        z-index:-1;
+    }
+
+    body.dark .aurora
+    {
+        opacity:1;
+    }
+
+    @keyframes auroraMove
+    {
+        0%,100%{transform:translateX(-5%) rotate(-2deg);}
+        50%{transform:translateX(5%) rotate(2deg);}
+    }
+    .moon::after
+    {
+        content:"";
+        position:absolute;
+        inset:-50px;
+        border-radius:50%;
+        border:1px solid rgba(255,255,255,.08);
+        filter:blur(8px);
+    }
+
+    /* ================= CARD FIREFLIES ================= */
+
+    .card-firefly
+    {
+        position:absolute;
+        width:14px;
+        height:14px;
+        border-radius:50%;
+        background:#fff36b;
+        box-shadow:
+            0 0 12px #fff36b,
+            0 0 25px #ffe600,
+            0 0 45px #ffd000,
+            0 0 70px rgba(255,220,0,.9),
+            0 0 100px rgba(255,220,0,.7);
+        pointer-events:none;
+        opacity:1;
+        animation:
+            fireflyBlink 1.8s ease-in-out infinite,
+            fireflyFloat 6s ease-in-out infinite,
+            fireflyGlow 2s ease-in-out infinite;
+    }
+
+    body:not(.dark) .card-firefly
+    {
+        display:none;
+    }
+
+    body.dark .card-firefly
+    {
+        display:block;
+    }
+
+    @keyframes fireflyBlink
+    {
+
+        0%,100%
+        {
+            opacity:.4;
+            transform:scale(.8);
+        }
+
+        50%
+        {
+            opacity:1;
+            transform:scale(1.5);
+        }
+    }
+
+    @keyframes fireflyFloat
+    {
+
+        0%
+        {
+            transform:translate(0,0);
+        }
+
+        25%
+        {
+            transform:translate(10px,-12px);
+        }
+
+        50%
+        {
+            transform:translate(-6px,-20px);
+        }
+
+        75%
+        {
+            transform:translate(-12px,-8px);
+        }
+
+        100%
+        {
+            transform:translate(0,0);
+        }
+
+    }
+
+    @keyframes fireflyGlow
+    {
+
+        0%,100%
+        {
+            box-shadow:
+                0 0 10px #fff36b,
+                0 0 20px #ffe600,
+                0 0 40px #ffd000,
+                0 0 60px rgba(255,220,0,.8);
+        }
+
+        50%
+        {
+            box-shadow:
+                0 0 18px #fff9a0,
+                0 0 40px #fff000,
+                0 0 70px #ffd700,
+                0 0 110px rgba(255,230,0,1),
+                0 0 160px rgba(255,240,100,.9);
+        }
+
+    }
+/* ================= MAGIC BUTTERFLY ================= */
+
+    #butterflies
+    {
+        position:fixed;
+        inset:0;
+        pointer-events:none;
+        overflow:hidden;
+        z-index:5;
+    }
+
+    .butterfly
+    {
+        position:absolute;
+        font-size:32px;
+        opacity:0;
+        filter:
+            drop-shadow(0 0 10px #ffd6fa)
+            drop-shadow(0 0 20px #ff9be8);
+        animation:flyAcross 18s linear forwards;
+    }
+
+    body:not(.dark) .butterfly
+    {
+        display:none;
+    }
+
+    @keyframes flyAcross
+    {
+
+        0%
+        {
+            left:-60px;
+            top:75%;
+            opacity:0;
+        }
+
+        10%
+        {
+            opacity:1;
+        }
+
+        20%
+        {
+            top:65%;
+        }
+
+        35%
+        {
+            top:45%;
+        }
+
+        50%
+        {
+            top:55%;
+        }
+
+        65%
+        {
+            top:35%;
+        }
+
+        80%
+        {
+            top:50%;
+        }
+
+        100%
+        {
+            left:110%;
+            top:25%;
+            opacity:0;
+        }
+
+    }
+
+    @keyframes flap
+    {
+
+        0%,100%
+        {
+            transform:scaleX(1);
+        }
+        50%
+        {
+            transform:scaleX(.75);
+        }
+    }
+
+    /* ===========----------====== REALISTIC BUTTERFLY ========-----------========= */
+
+    .butterfly
+    {
+        position:absolute;
+        width:40px;
+        height:30px;
+        animation:flyAcross 18s linear forwards;
+    }
+
+    .butterfly-body
+    {
+        position:relative;
+        width:40px;
+        height:30px;
+    }
+
+    .body
+    {
+        position:absolute;
+        left:18px;
+        top:4px;
+        width:4px;
+        height:22px;
+        background:#2c2c2c;
+        border-radius:20px;
+        z-index:5;
+    }
+
+    .wing
+    {
+        position:absolute;
+        width:18px;
+        height:22px;
+        background:linear-gradient(
+            135deg,
+            #ff8fd1,
+            #ffd6ff,
+            #b6d8ff
+        );
+        border-radius:70% 30% 70% 30%;
+        box-shadow:
+            0 0 8px rgba(255,180,255,.6);
+        transform-origin:center right;
+    }
+
+    .left
+    {
+        left:0;
+        top:2px;
+        animation:leftFlap .22s ease-in-out infinite;
+    }
+
+    .right
+    {
+        right:0;
+        top:2px;
+        transform-origin:center left;
+        animation:rightFlap .22s ease-in-out infinite;
+    }
+
+    @keyframes leftFlap
+    {
+
+        0%,100%
+        {
+            transform:rotateY(0deg) rotate(-18deg);
+        }
+
+        50%
+        {
+            transform:rotateY(75deg) rotate(-5deg);
+        }
+
+    }
+
+    @keyframes rightFlap
+    {
+
+        0%,100%
+        {
+            transform:rotateY(0deg) rotate(18deg);
+        }
+
+        50%
+        {
+            transform:rotateY(-75deg) rotate(5deg);
+        }
+
+    }
+
+    
+    /* ==========------------======= GALAXY ========---------========= */
+
+    .galaxy{
+        position:fixed;
+        inset:0;
+        pointer-events:none;
+        z-index:-3;
+        opacity:0;
+        transition:opacity 1.5s ease;
+        background:
+        /* Nebula 1 */
+        radial-gradient(circle at 20% 30%,
+            rgba(180,120,255,.18),
+            transparent 28%),
+
+        /* Nebula 2 */
+        radial-gradient(circle at 75% 18%,
+            rgba(120,190,255,.14),
+            transparent 30%),
+
+        /* Nebula 3 */
+        radial-gradient(circle at 65% 70%,
+            rgba(255,120,220,.16),
+            transparent 32%),
+
+        /* Nebula 4 */
+        radial-gradient(circle at 40% 82%,
+            rgba(120,255,255,.08),
+            transparent 28%);
+
+        filter:blur(60px);
+        animation:galaxyMove 40s ease-in-out infinite;
+    }
+
+    body.dark .galaxy
+    {
+        opacity:1;
+    }
+
+    @keyframes galaxyMove
+    {
+        0%,100%
+        {
+            transform:scale(1) translate(0,0);
+        }
+
+        50%
+        {
+            transform:scale(1.08)
+                    translate(25px,-20px);
+        }
+
+    }
+
+    .galaxy::before
+    {
+        content:"";
+        position:absolute;
+        inset:0;
+        background:
+        radial-gradient(circle at 80% 60%,
+            rgba(180,140,255,.12),
+            transparent 30%),
+
+        radial-gradient(circle at 30% 15%,
+            rgba(100,220,255,.10),
+            transparent 25%),
+
+        radial-gradient(circle at 60% 40%,
+            rgba(255,170,220,.10),
+            transparent 25%);
+        filter:blur(80px);
+        animation:galaxyMove2 55s linear infinite;
+    }
+
+    @keyframes galaxyMove2
+    {
+
+        from
+        {
+            transform:translateX(-40px);
+        }
+
+        to
+        {
+            transform:translateX(40px);
+        }
+
+    }
+
+    .galaxy::after
+    {
+        content:"";
+        position:absolute;
+        width:180%;
+        height:280px;
+        top:18%;
+        left:-40%;
+        background:linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.025),
+            rgba(180,150,255,.08),
+            rgba(120,180,255,.06),
+            rgba(255,180,230,.08),
+            transparent
+        );
+        filter:blur(40px);
+        transform:rotate(-18deg);
+        animation:milkyWay 70s linear infinite;
+    }
+
+    @keyframes milkyWay
+    {
+        from
+        {
+            transform:rotate(-18deg)
+                    translateX(-60px);
+        }
+
+        to
+        {
+            transform:rotate(-18deg)
+                    translateX(60px);
+        }
+    }
+
+    /*========-----------========== NIGHTFALL ==========-----------========*/
+
+    #nightfallIntro
+    {
+        position:fixed;
+        inset:0;
+        background:#000;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        z-index:999999;
+        opacity:0;
+        visibility:hidden;
+        transition:.8s;
+        overflow:hidden;
+    }
+
+    #nightfallIntro.active
+    {
+        opacity:1;
+        visibility:visible;
+    }
+
+    #nightfallText
+    {
+        width:min(90%,750px);
+
+font-size:clamp(18px,4vw,28px);
+
+padding:20px;
+
+        color:#66ffcc;
+        
+        font-family:Consolas, monospace;
+        white-space:pre-line;
+        line-height:1.8;
+        text-align:center;
+        text-shadow:0 0 10px #00ff99;
+    }
+
+    @keyframes glitchScreen
+    {
+        0%
+        {
+        transform:translate(0);
+        filter:hue-rotate(0deg);
+        }
+
+        20%
+        {
+        transform:translate(-3px,2px);
+        filter:hue-rotate(30deg);
+        }
+
+        40%
+        {
+        transform:translate(4px,-3px);
+        filter:hue-rotate(-20deg);
+        }
+
+        60%
+        {
+        transform:translate(-5px,3px);
+        filter:hue-rotate(60deg);
+        }
+
+        80%
+        {
+        transform:translate(3px,-2px);
+        filter:hue-rotate(-40deg);
+        }
+
+        100%
+        {
+        transform:translate(0);
+        filter:hue-rotate(0);
+        }
+    }
+
+    .glitch
+    {
+    animation:glitchScreen .08s infinite;
+    }
+
+/* ================================================= */
+/* RESPONSIVE DESIGN */
+/* ================================================= */
+
+@media (max-width:1024px)
+{
+    .navbar
+    {
+        padding:15px 25px;
+    }
+
+    .logo
+    {
+        font-size:22px;
+    }
+
+    .nav-links
+    {
+        gap:18px;
+        flex-wrap:wrap;
+    }
+
+    .main
+    {
+        gap:20px;
+        padding:20px;
+    }
+
+    .col
+    {
+        flex:1 1 240px;
+        max-width:280px;
+    }
+
+    .moon
+    {
+        width:140px;
+        height:140px;
+        top:80px;
+        right:30px;
+    }
+
+    #nightfallText
+    {
+        width:85%;
+        font-size:24px;
+    }
+}
+
+@media (max-width:1024px)
+{
+    .navbar
+    {
+        padding:15px 25px;
+    }
+
+    .moon
+    {
+        width:140px;
+        height:140px;
+        top:40px;
+        right:40px;
+    }
+
+    .main
+    {
+        gap:20px;
+    }
+}
+
+@media (max-width:768px)
+{
+
+    p
+    {
+        margin-top:25px;
+        line-height:1.2;
+    }
+
+    .subtitle
+    {
+        padding:0 20px;
+    }
+
+    .navbar
+    {
+        flex-direction:column;
+        gap:15px;
+        padding:15px;
+    }
+
+    .nav-links
+    {
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+   #search{
+
+width:min(92%,450px);
+
+font-size:16px;
+
+}
+
+    .main
+    {
+        padding:15px;
+    }
+
+ .col{
+    flex:1 1 100%;
+    width:100%;
+    max-width:420px;
+}
+
+   .moon{
+
+width:80px;
+height:80px;
+
+top:120px;
+right:15px;
+
+opacity:.7;
+
+}
+
+    .cloud
+    {
+        transform:scale(.8);
+    }
+
+    footer
+    {
+        padding:30px 15px;
+        font-size:16px;
+    }
+
+}
+
+@media (max-width:480px)
+{
+
+    p
+    {
+        font-size:32px;
+    }
+
+    .controls button{
+
+width:100%;
+        margin:8px 0;
+    }
+
+    .controls
+    {
+        padding:0 12px;
+    }
+
+    .nav-links
+    {
+        gap:8px;
+    }
+
+    .nav-links button{
+
+width:auto;
+
+}
+    .moon
+    {
+        width:70px;
+        height:70px;
+    }
+
+    .cloud
+    {
+        display:none;
+    }
+
+}
+
+#vaultBtn{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+padding:10px 22px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+color:#fff;
+
+background:linear-gradient(135deg,#7f5cff,#00d4ff,#ff6ec7);
+
+background-size:300% 300%;
+
+box-shadow:
+0 0 12px rgba(127,92,255,.5),
+0 0 25px rgba(0,212,255,.35);
+
+animation:
+vaultGlow 4s ease infinite,
+vaultFloat 3s ease-in-out infinite;
+
+transition:.35s;
+}
+
+#vaultBtn:hover{
+
+transform:translateY(-4px) scale(1.06);
+
+box-shadow:
+0 0 18px #7f5cff,
+0 0 35px #00d4ff,
+0 0 60px #ff6ec7;
+
+}
+
+@keyframes vaultGlow{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+@keyframes vaultFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-3px);
+}
+
+}
+@media (max-width:768px){
+
+.star,
+.card-firefly,
+.butterfly{
+
+animation-duration:24s ;
+
+}
+
+.aurora{
+
+filter:blur(30px);
+
+}
+
+}
+.code-word {
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  cursor: help;
+  filter: blur(0.5px);
+  text-align: center;
+}
+.code-word:hover {
+  opacity: 1;
+  filter: blur(0);
+  text-shadow: 0 0 8px #ff8ec2;
+  transform: scale(1.1);
+} 
+.nightfall-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #6F639B;
+    text-align: center;
+    letter-spacing: 1.5px;
+    margin-bottom: -5px;
+    text-shadow: 0 2px 8px rgba(111, 99, 155, 0.12);
+}

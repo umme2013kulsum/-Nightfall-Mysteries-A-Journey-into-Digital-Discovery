@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🌙 Nightfall</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+    *
+    {
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Poppins,sans-serif;
+    }
+
+    body
+    {
+        background:
+        radial-gradient(circle at top,#1a2748,#0b1120 40%,#05070d 100%);
+        color:white;
+        overflow-x:hidden;
+        min-height:100vh;
+    }
+
+    /* --------------Stars---------- */
+
+    .stars
+    {
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        pointer-events:none;
+        z-index:0;
+    }
+
+    .star
+    {
+        position:absolute;
+        width:2px;
+        height:2px;
+        background:white;
+        border-radius:50%;
+        opacity:.7;
+        animation:twinkle 4s infinite ease-in-out;
+    }
+
+    @keyframes twinkle
+    {
+
+        0%,100%
+        {
+            opacity:.2;
+        }
+
+        50%
+        {
+            opacity:1;
+        }
+
+    }
+
+    /*----------------- Moon -------------*/
+
+    .moon
+    {
+    position:fixed;
+    top:30px;
+    right:30px;
+    width:clamp(70px,14vw,120px);
+    height:clamp(70px,14vw,120px);
+        border-radius:50%;
+        background:
+        radial-gradient(circle at 35% 30%,
+        #ffffff,
+        #ece7d7 60%,
+        #c9c1af);
+        box-shadow:
+        0 0 30px rgba(255,255,255,.9),
+        0 0 80px rgba(255,255,255,.35);
+        animation:floatMoon 8s ease-in-out infinite;
+    }
+
+    @keyframes floatMoon
+    {
+
+        0%,100%
+        {
+            transform:translateY(0);
+        }
+
+        50%
+        {
+            transform:translateY(-10px);
+        }
+
+    }
+
+    /* ------------------Header ---------------*/
+
+    header
+    {
+        padding:60px 20px 20px;
+        text-align:center;
+        position:relative;
+        z-index:2;
+    }
+
+    header h1
+    {
+        font-size:60px;
+        letter-spacing:8px;
+        color:#66ffcc;
+        text-shadow:
+        0 0 10px #66ffcc,
+        0 0 30px rgba(102,255,204,.5);
+    }
+
+    header p
+    {
+        margin-top:15px;
+        color:#bbbbbb;
+        font-size:18px;
+    }
+
+    /* -----------------Founder -----------*/
+
+    .founder
+    {
+         max-width:900px;
+    width:92%;
+    margin:50px auto;
+    padding:30px;
+        background:rgba(255,255,255,.05);
+        backdrop-filter:blur(12px);
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:18px;
+        text-align:center;
+        position:relative;
+        z-index:2;
+    }
+
+    .founder h2
+    {
+        margin-bottom:20px;
+        color:#66ffcc;
+    }
+
+    .founder p
+{
+    font-size:clamp(15px,2.8vw,18px);
+    line-height:1.8;
+}
+
+    /*---------------- Cards-------------------- */
+
+    .container
+    {
+        max-width:1100px;
+        margin:auto;
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:25px;
+        padding:20px;
+        position:relative;
+        z-index:2;
+    }
+
+    .card
+    {
+        background:rgba(255,255,255,.05);
+    width:100%;
+        backdrop-filter:blur(15px);
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:18px;
+        padding:30px;
+        text-align:center;
+        transition:.35s;
+    }
+
+    .card:hover
+    {
+        transform:translateY(-10px);
+        box-shadow:0 20px 40px rgba(0,255,180,.15);
+        border-color:#66ffcc;
+    }
+
+    .card h3
+    {
+        margin-bottom:15px;
+        color:#66ffcc;
+    }
+
+    .card p
+    {
+        color:#cccccc;
+        margin-bottom:25px;
+    }
+
+    .card a
+    {
+        display:inline-block;
+        padding:12px 25px;
+        border-radius:30px;
+        background:#66ffcc;
+        color:#111;
+        font-weight:bold;
+        text-decoration:none;
+        transition:.3s;
+    }
+
+    .card a:hover
+    {
+        transform:scale(1.05);
+    }
+
+    /*----------- Footer --------------*/
+
+    footer
+    {
+        text-align:center;
+        padding:60px 20px;
+        color:#888;
+        position:relative;
+        z-index:2;
+    }
+
+    .back
+    {
+        margin-top:25px;
+        display:inline-block;
+        padding:14px 30px;
+        border-radius:40px;
+        text-decoration:none;
+        background:#66ffcc;
+        color:#111;
+        font-weight:bold;
+        transition:.3s;
+    }
+
+    .back:hover
+    {
+        transform:scale(1.08);
+    }
+    .hero
+    {
+        text-align:center;
+        padding:80px 20px;
+    }
+.hero h1
+{
+    font-size:clamp(38px,8vw,70px);
+    margin-bottom:15px;
+    line-height:1.1;
+}
+
+    .hero p
+{
+    color:#bbbbbb;
+    font-size:clamp(16px,3vw,20px);
+    line-height:1.7;
+    max-width:700px;
+    margin:auto;
+}
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width:768px)
+{
+
+    header
+    {
+        padding:40px 15px 10px;
+    }
+
+    header h1
+    {
+        font-size:42px;
+        letter-spacing:3px;
+    }
+
+    .hero
+    {
+        padding:60px 20px;
+    }
+
+    .hero h1
+    {
+        font-size:42px;
+    }
+
+    .hero p
+    {
+        font-size:16px;
+    }
+
+    .founder
+    {
+        width:92%;
+        padding:20px;
+    }
+
+    .container
+    {
+        grid-template-columns:1fr;
+        padding:20px;
+    }
+
+    .card
+    {
+        padding:22px;
+    }
+
+    .moon
+    {
+        width:80px;
+        height:80px;
+        top:20px;
+        right:20px;
+    }
+
+}
+
+@media (max-width:480px)
+{
+
+    .hero h1
+    {
+        font-size:34px;
+    }
+
+    .hero p
+    {
+        font-size:15px;
+    }
+
+    .founder h2
+    {
+        font-size:24px;
+    }
+
+    .card h3
+    {
+        font-size:20px;
+    }
+
+}
+
+.image-frame {
+    position: relative;
+   width:clamp(120px,25vw,180px);
+    height:clamp(120px,25vw,180px);
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    padding: 6px;
+
+    background: linear-gradient(135deg, #66ffcc, #1a2748, #ffffff33);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 0 20px rgba(102,255,204,0.4),
+        0 0 60px rgba(102,255,204,0.15);
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Image */
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+
+    transition: 0.4s ease;
+}
+
+/* Hover overlay */
+.hover-names {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: #66ffcc;
+
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 0.4s ease;
+
+    border-radius: 50%;
+}
+
+/* Hover effects */
+.image-frame:hover img {
+    transform: scale(1.1);
+    filter: blur(2px) brightness(0.6);
+}
+
+.image-frame:hover .hover-names {
+    opacity: 1;
+    transform: scale(1);
+}
+.button1{
+    display:inline-block;
+    padding:14px 38px;
+
+    background:transparent;
+
+    color:#66ffcc;
+
+    text-decoration:none;
+
+    border:2px solid #66ffcc;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.4s ease;
+
+    box-shadow:
+        0 0 10px rgba(102,255,204,.3),
+        inset 0 0 10px rgba(102,255,204,.08);
+        text-align: center;
+    display:inline-block;
+    margin:30px auto;
+    text-decoration:none;
+    margin-left: 630px;
+}
+
+.special-button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+
+.button1::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transition:.6s;
+}
+
+.button1:hover{
+
+    background:#66ffcc;
+
+    color:#08111d;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 15px #66ffcc,
+        0 0 35px rgba(102,255,204,.7),
+        0 0 60px rgba(102,255,204,.35);
+}
+
+.button1:hover::before{
+
+    left:120%;
+
+}
+
+.button1:active{
+
+    transform:scale(.96);
+
+}
+
+@media(max-width:360px){
+
+    header h1,
+    .hero h1{
+        font-size:32px;
+        letter-spacing:2px;
+    }
+
+
+    .founder{
+        padding:18px;
+    }
+
+
+    .card{
+        padding:18px;
+    }
+
+
+    .button1{
+        width:90%;
+        text-align:center;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+    <div class="stars" id="stars"></div>
+    <div class="moon"></div>
+
+    <section class="hero">
+        <h1>Nightfall</h1>
+        <p>
+            A hidden place built for explorers who found the Secret Vault.
+            Only members may continue beyond this point.
+        </p>
+    </section>
+
+    <div class="founder">
+
+        <h2>Who Made This?</h2>
+
+        <p>
+
+     <div class="image-frame">
+    <img src="img.png" alt="KAYZA Members">
+
+    <div class="hover-names">
+         · LUNA · 
+    </div>
+</div>
+            <br>
+            Created by <strong>A TEEN</strong>
+            <br><br>
+            "If you're reading this, you found something that wasn't meant to be found."
+        </p>
+
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+    <h3>LUMINA</h3>
+    <p>The story behind the creator.</p>
+    <a href="portfolio.html">Enter</a>
+</div>
+
+<div class="card">
+    <h3>🌙 Behind the Mystery</h3>
+    <p>a collection of stories.</p>
+    <a href="journal.html">Enter</a>
+</div>
+
+<div class="card">
+   <h3>📜 The Final Letter</h3>
+   <p>The final destination where every secret leads.</p>
+    <a href="final-letter.html">Enter</a>
+</div>
+
+
+        
+
+    </div>
+
+   <a href="web5.html" class="button1">
+    ⭐ You Deserve This!
+</a>
+
+    <footer>
+        <p>
+            🌙 Not everyone finds this place.If you found it you must be special!
+        </p>
+        <a href="index.html" class="back">
+            ← Return to Mystery Websites
+        </a>
+    </footer>
+
+    <script>
+        const stars=document.getElementById("stars");
+        for(let i=0;i<180;i++)
+        {
+            const s=document.createElement("div");
+            s.className="star";
+            s.style.left=Math.random()*100+"vw";
+            s.style.top=Math.random()*100+"vh";
+            const size=Math.random()*2+1;
+            s.style.width=size+"px";
+            s.style.height=size+"px";
+            s.style.animationDelay=Math.random()*4+"s";
+            stars.appendChild(s);
+        }
+
+window.addEventListener("load", () => {
+    localStorage.setItem("vaultUnlocked", "true");
+});
+
+    </script>
+
+    <script src="fragments.js"></script>
+</body>
+</html>
+<!-- KAY-zah
+LUNA → LOO-nah KULSUM
+ZYRA → ZAI-rah UMYZA
+ARIA → AH-ree-ah AYAAT
+ZENA → ZEE-nah FAIZA -->

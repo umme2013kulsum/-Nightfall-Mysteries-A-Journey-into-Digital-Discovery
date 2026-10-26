@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🔍 Mystery Websites | Discover Hidden Gems</title>
+ 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <div id="stars"></div>
+
+    <div class="galaxy"></div>
+
+    <div id="butterflies"></div>
+
+    <div class="aurora"></div>
+
+    <div class="moon"></div>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <nav class="navbar">
+
+        <div class="logo">
+        🔍 Mystery Websites
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#">Home</a>
+
+            <a href="#" id="favoritesBtn">❤️ Favorites (<span id="favCount">0</span>)</a>
+
+            <a href="#" onclick="randomSite()">Random</a>
+
+            <button id="musicBtn">🎵</button>
+
+            <button id="darkModeBtn">🌙</button>
+
+ <a href="nightfall.html" id="vaultBtn" style="display:none;">
+    🗝 Secret Vault
+</a>
+
+        </div>
+
+    </nav>
+
+    <audio id="bgMusic" loop>
+        <source src="mystery.mp3" type="audio/mpeg">
+    </audio>
+
+    <p class="nightfall-subtitle">
+    Nightfall Mysteries: A Journey into Digital Discovery
+</p>
+
+    <p>𝓜𝔂𝓼𝓽𝓮𝓻𝔂 𝓦𝓮𝓫𝓼𝓲𝓽𝓮𝓼</p>
+
+    <h5 class="code-word">𒋻𒁇𒐕  -  𒁀𒋻𒁀𒋻'𒔼  -  𐏓𒋻𐎏𒀼</h5>
+
+    <div class="subtitle">
+        Discover the internet one mystery at a time...
+    </div>
+
+    <div class="controls">
+
+     <input
+type="text"
+id="search"
+placeholder="🔍 Search Website...">
+
+        <br>
+
+        <button onclick="showAlert()">
+        ✨ Welcome
+        </button>
+
+        <button onclick="randomSite()">
+        🎲 Random Mystery
+        </button>
+
+    </div>
+
+    <div class="counter" id="counter">
+    🕵️ 35 Mysteries Waiting...
+    </div>
+
+
+    <div class="main">
+
+        <!-- WEBSITE 1 -->
+        <div class="col">
+            <a href="https://neal.fun/password-game/" class="mysteryLink" target="_blank">
+            <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>“Think your password is strong? Prove it.”</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/62/91/b9/6291b9ad0ec0193879b7f6ac40f3143d.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 2 -->
+        <div class="col">
+            <a href="https://mrdoob.com/projects/chromeexperiments/google-gravity/index.html"  class="mysteryLink" target="_blank">
+            <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🌍 Reality isn't as stable as it seems.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/736x/7e/f8/54/7ef85461252bff26a5bb0182147e3fe4.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 3 -->
+        <div class="col">
+            <a href="https://scaleofuniverse.com/en" class="mysteryLink" target="_blank">
+            <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🌌 How small... or how enormous... are you?</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/736x/89/ca/49/89ca49843887a37ca08f6d4222d82a77.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 4 -->
+        <div class="col">
+            <a href="https://zoomquilt.org/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🌀 There is no end. Keep going.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/16/4f/53/164f53e26f90b1aafe071aa002e9b031.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 5 -->
+        <div class="col">
+            <a href="https://elgoog.im/batman/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🦇 A signal is waiting for you.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/f7/22/59/f7225938f9121c6f36d81ea966581e52.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 6 -->
+        <div class="col">
+            <a href="https://this-person-does-not-exist.com/en" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>😶 This person has never lived.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/736x/1e/ab/35/1eab358bd642a0667298f73c87afe043.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 7 -->
+        <div class="col">
+            <a href="https://pointerpointer.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>👆 It already knows where you are.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/68/60/bf/6860bf23f1d53d8ab74e1f97c08ccd37.png')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 8 -->
+        <div class="col">
+            <a href="https://typedrummer.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>“Your Keyboard Hides a Rhythm… Can You Find It?” 🎹</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/66/0c/09/660c093c8c8420e13d619e72300c0935.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 9 -->
+        <div class="col">
+            <a href="https://90s.myretrotvs.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>📺 A forgotten channel is still broadcasting.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/2f/9c/2f/2f9c2f3d1490275b328b030f01d8d174.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 10 -->
+        <div class="col">
+            <a href="https://clicktheredbutton.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🔴 Everyone presses it eventually.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/76/e4/cd/76e4cd4d3b44dc51ac775a664f55c8cf.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 11 -->
+        <div class="col">
+            <a href="https://theuselessweb.com/"  class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🎲 Nobody knows what's next.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/12/94/90/129490e6debbe83feaa98a253e10a365.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 12 -->
+        <div class="col">
+            <a href="https://findtheinvisiblecow.com/"  class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🐄 Listen carefully... it's closer than you think.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/736x/06/1e/50/061e50f53915ade8e0a06118f73ad7cd.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 13 -->
+        <div class="col">
+            <a href="https://geekprank.com/hacker/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>💻 Access granted... or is it?</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/b3/3b/d2/b33bd234a3c99ffd5cfcb56b486fbb6d.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 14 -->
+        <div class="col">
+            <a href="http://weavesilk.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>✨ Paint with something you can't touch.</h2></div>
+            <div class="bg-img" style="background-image:url('https://wallpapercave.com/wp/wp5943829.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 15 -->
+        <div class="col">
+            <a href="https://stellarium-web.org/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🌠 Look up... someone else already is.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/736x/15/67/fc/1567fc21b92fcd13d20c70d916ed7663.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 16 -->
+        <div class="col">
+            <a href="https://www.flightradar24.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>✈️ Thousands are moving right now.</h2></div>
+            <div class="bg-img" style="background-image:url('https://wallpaperaccess.com/full/1203354.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 17 -->
+        <div class="col">
+            <a href="https://paveldogreat.github.io/WebGL-Fluid-Simulation/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>“What happens when your fingertips disturb another dimension?”</h2></div>
+            <div class="bg-img" style="background-image:url('https://wallpapercave.com/wp/wp2843467.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 18 -->
+        <div class="col">
+            <a href="https://boredhumans.com/falling_sand.php" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🧪 What happens if you break the rules?</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/ee/74/c2/ee74c283402507a051a112ac5fd58d3e.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 19 -->
+        <div class="col">
+            <a href="https://stars.chromeexperiments.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>⭐ You're only a tiny dot.</h2></div>
+            <div class="bg-img" style="background-image:url('https://wallpapercave.com/wp/wp11347613.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 20 -->
+        <div class="col">
+            <a href="https://emojikitchen.dev/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🤯 Some things were never meant to mix.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/e4/7a/f8/e47af8d571831fe42510a23313b666b9.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 21 -->
+        <div class="col">
+            <a href="https://web.archive.org/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>📜 Nothing truly disappears.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/f4/b5/14/f4b514e6af8ef93a4cc37314d473381f.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 22 -->
+        <div class="col">
+            <a href="https://littlealchemy2.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>⚗️ Everything began with almost nothing.</h2></div>
+            <div class="bg-img" style="background-image:url('https://wallpapercave.com/wp/wp4763059.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 23 -->
+        <div class="col">
+            <a href="https://quickdraw.withgoogle.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>✏️ Can it understand your imagination?</h2></div>
+            <div class="bg-img" style="background-image:url('https://wallpapercave.com/wp/wp6057151.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 24 -->
+        <div class="col">
+            <a href="https://patatap.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🎹 Every key unlocks a surprise.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/736x/d9/8d/f8/d98df8b32e9fa7c73baabaed905e95eb.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 25 -->
+        <div class="col">
+            <a href="https://www.boredbutton.com/random" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🎁 One click. Zero expectations.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/63/54/69/6354697c307329d66740a96f601eccc2.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 26 -->
+        <div class="col">
+            <a href="https://neal.fun/infinite-craft/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>“Combine the impossible. Discover the unimaginable.”</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/78/a7/8c/78a78c2dabbe6b3b53b234b4101ab928.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 27 -->
+        <div class="col">
+            <a href="https://dinosaurpictures.org/ancient-earth#400" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🌍 Our world looked very different once.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/736x/a3/db/3d/a3db3d93d2eff141559124600c91e1e3.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 28 -->
+        <div class="col">
+            <a href="https://www.marinetraffic.com/en/ais/home/centerx:-118.1/centery:32.6/zoom:2" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🚢 Every light hides a journey.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/736x/07/a9/0d/07a90db2bc72b964523077026c0c48cf.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 29 -->
+        <div class="col">
+            <a href="https://www.pixelthoughts.co/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🌌 Watch your worries drift away.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/fc/7c/d0/fc7cd0ec0bee6840ee67127c7d901476.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 30 -->
+        <div class="col">
+            <a href="https://quickdraw.withgoogle.com/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🎨 Your mind vs. AI.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/3b/6b/66/3b6b66b497fd40818fdd0194f59bb04b.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 31 -->
+        <div class="col">
+            <a href="https://en.akinator.com/game" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🧞 It already knows your secret.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/736x/fd/3d/f3/fd3df362164fb206c014f8724feef9a0.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 32 -->
+        <div class="col">
+            <a href="https://neal.fun/deep-sea/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🌊 The deeper you go, the stranger it gets.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/19/70/71/197071cecea5151742a278a0dba05dc8.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 33 -->
+        <div class="col">
+            <a href="https://neal.fun/logos-from-memory/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🧠 Memory isn't as reliable as you think.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/14/d4/03/14d403bf1cac92380c2514cea3c26a71.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 34 -->
+        <div class="col">
+            <a href="https://neal.fun/speed/" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>⚡ Can you keep up with reality?</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/79/29/51/7929516c81396ada2e2f292e6d9ec2ab.jpg')"></div>
+            </a>
+        </div>
+
+        <!-- WEBSITE 35 -->
+        <div class="col">
+            <a href="web35.html" class="mysteryLink" target="_blank">
+                <div class="favorite" onclick="toggleFavorite(event,this)">
+                🤍
+            </div>
+            <div class="align-bottom"><h2>🏆 Only explorers reach the end.</h2></div>
+            <div class="bg-img" style="background-image:url('https://i.pinimg.com/originals/de/0f/6a/de0f6a9215c3ca5b7d56ed0d39586950.jpg')"></div>
+            </a>
+            </div>
+
+    </div>
+
+    <footer>
+
+        <h2 style="color:#444;margin-bottom:15px;">
+            🌍 Every click reveals a new corner of the Internet.
+        </h2>
+
+        <p style="font-size:18px;color:#666;text-shadow:none;">
+            ~ ℳ𝒶𝒹ℯ 𝒷𝓎 𝓉ℯℯ𝓃𝓈, 𝒻ℴ𝓇 𝒸𝓊𝓇𝒾ℴ𝓊𝓈 ℯ𝓍𝓅𝓁ℴ𝓇ℯ𝓇𝓈. 💜
+        </p>
+
+        <br>
+
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="mine">
+            ⬆ 𝓑𝓪𝓬𝓴 𝓽𝓸 𝓣𝓸𝓹 ⬆
+        </button>
+
+    </footer>
+
+    <div id="fireflies"></div>
+
+<!-- ==========-----------======= NIGHTFALL INTRO =======--------========== -->
+
+    <div id="nightfallIntro">
+
+        <div id="nightfallText"></div>
+
+    </div>
+
+<script src="script.js"></script>
+
+<!-- ================= SECRET VAULT INTRO ================= -->
+
+<div id="vaultIntro">
+    <div id="vaultText"></div>
+</div>
+
+
+
+</body>
+</html>

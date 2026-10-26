@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Creator's Journal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:wght@400;500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+
+body{
+
+    background:#181411;
+
+    overflow:hidden;
+
+    font-family:'Lora',serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+
+/* ==============================
+        WOODEN DESK
+================================ */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    rgba(255,255,255,.02),
+    transparent 5%,
+    rgba(0,0,0,.05)
+    ),
+
+    linear-gradient(
+    180deg,
+    #4A3223,
+    #3C291D,
+    #2E1E15
+    );
+
+    background-size:
+    120px 100%,
+    100% 100%;
+
+}
+
+
+/* ==============================
+        DESK LIGHT
+================================ */
+
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(255,228,170,.25),
+    transparent 70%
+    );
+
+
+    filter:blur(50px);
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+}
+
+
+
+/* ==============================
+            BOOK
+================================ */
+
+
+.book{
+
+    position:relative;
+
+    width:min(1000px,90vw);
+
+    height:min(640px,75vh);
+
+
+    background:#F5E8CC;
+
+    border-radius:8px;
+
+    display:flex;
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+    0 35px 80px rgba(0,0,0,.55),
+
+    0 0 0 8px rgba(0,0,0,.08);
+
+
+    z-index:5;
+
+    transition:.5s;
+
+}
+
+
+
+.book:hover{
+
+    transform:translateY(-6px);
+
+
+    box-shadow:
+
+    0 45px 90px rgba(0,0,0,.55);
+
+}
+
+
+
+/* ==============================
+            SPINE
+================================ */
+
+
+.spine{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+
+    width:20px;
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+    to right,
+    #9B7B58,
+    #6F543A,
+    #9B7B58
+    );
+
+
+    box-shadow:
+
+    0 0 20px rgba(0,0,0,.25);
+
+    z-index:5;
+
+}
+
+
+
+/* ==============================
+            PAGES
+================================ */
+
+
+.page{
+
+    flex:1;
+
+    padding:clamp(30px,5vw,70px);
+
+    position:relative;
+
+}
+
+
+
+.page::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.06;
+
+
+    background-image:
+
+    radial-gradient(
+    circle,
+    #000 1px,
+    transparent 1px
+    );
+
+
+    background-size:18px 18px;
+
+    pointer-events:none;
+
+}
+
+
+
+/* ==============================
+        LEFT PAGE
+================================ */
+
+
+.left{
+
+
+    border-right:1px solid rgba(0,0,0,.08);
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    text-align:center;
+
+}
+
+
+
+.left h1{
+
+
+    font-family:'Cormorant Garamond',serif;
+
+
+    font-size:clamp(35px,5vw,60px);
+
+
+    color:#3A2A20;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.left p{
+
+
+    font-size:clamp(16px,2vw,20px);
+
+
+    color:#705A49;
+
+
+    font-style:italic;
+
+
+    line-height:1.8;
+
+}
+
+
+
+/* ==============================
+        RIGHT PAGE
+================================ */
+
+
+.right{
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.content{
+
+    width:100%;
+
+    max-width:420px;
+
+}
+
+
+
+.content h2{
+
+
+    font-family:'Cormorant Garamond',serif;
+
+
+    font-size:clamp(30px,4vw,46px);
+
+
+    margin-bottom:25px;
+
+
+    color:#3A2A20;
+
+
+}
+
+
+
+.content p{
+
+
+    font-size:clamp(16px,2vw,20px);
+
+
+    line-height:2;
+
+
+    color:#4A3A31;
+
+
+}
+/* ==============================
+        PAGE NUMBERS
+================================ */
+
+
+.number{
+
+    position:absolute;
+
+    bottom:28px;
+
+    font-size:16px;
+
+    color:#8D7768;
+
+}
+
+
+.left .number{
+
+    left:40px;
+
+}
+
+
+.right .number{
+
+    right:40px;
+
+}
+
+
+
+/* ==============================
+            BUTTONS
+================================ */
+
+
+.controls{
+
+    position:absolute;
+
+    bottom:45px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    gap:25px;
+
+    z-index:20;
+
+}
+
+
+
+button{
+
+    padding:15px 35px;
+
+
+    border:none;
+
+
+    border-radius:40px;
+
+
+    background:#6B4D34;
+
+
+    color:white;
+
+
+    font-family:'Poppins',sans-serif;
+
+
+    font-size:15px;
+
+
+    cursor:pointer;
+
+
+    transition:.35s;
+
+
+    box-shadow:
+
+    0 8px 20px rgba(0,0,0,.25);
+
+}
+
+
+
+button:hover{
+
+
+    background:#8B6546;
+
+
+    transform:translateY(-3px);
+
+
+    box-shadow:
+
+    0 15px 30px rgba(0,0,0,.35);
+
+
+}
+
+
+
+button:disabled{
+
+
+    opacity:.4;
+
+    cursor:not-allowed;
+
+
+}
+
+
+
+button:disabled:hover{
+
+    transform:none;
+
+    background:#6B4D34;
+
+}
+
+
+
+/* ==============================
+        PAGE CHANGE ANIMATION
+================================ */
+
+
+.content{
+
+
+    transition:
+
+    opacity .45s ease,
+
+    transform .45s ease;
+
+
+}
+
+
+
+.fade-out{
+
+
+    opacity:0;
+
+    transform:translateX(-30px);
+
+
+}
+
+
+
+.fade-in{
+
+
+    opacity:1;
+
+    transform:translateX(0);
+
+
+}
+
+
+
+/* ==============================
+        SOFT PAPER GLOW
+================================ */
+
+
+.book::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    pointer-events:none;
+
+
+    border-radius:8px;
+
+
+    box-shadow:
+
+    inset 0 0 50px rgba(80,50,20,.15);
+
+
+}
+
+
+
+/* ==============================
+        OLD PAPER EDGE
+================================ */
+
+
+.page:first-of-type{
+
+
+    box-shadow:
+
+    inset -20px 0 30px rgba(0,0,0,.06);
+
+
+}
+
+
+
+.page:last-of-type{
+
+
+    box-shadow:
+
+    inset 20px 0 30px rgba(0,0,0,.06);
+
+
+}
+
+
+
+/* ==============================
+        TEXT SELECTION
+================================ */
+
+
+::selection{
+
+
+    background:#8B6546;
+
+    color:white;
+
+
+}
+
+
+
+/* ==============================
+        SMOOTH ENTRY
+================================ */
+
+
+.book{
+
+
+    animation:
+
+    bookAppear 1s ease;
+
+
+}
+
+
+
+@keyframes bookAppear{
+
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateY(40px)
+
+        scale(.95);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0)
+
+        scale(1);
+
+    }
+
+
+}
+
+
+
+/* ==============================
+        BUTTON FLOAT EFFECT
+================================ */
+
+
+.controls button{
+
+
+    animation:
+
+    buttonFloat 4s ease-in-out infinite;
+
+
+}
+
+
+
+.controls button:nth-child(2){
+
+    animation-delay:.5s;
+
+}
+
+
+
+@keyframes buttonFloat{
+
+
+    0%,
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
+
+
+}
+
+
+
+/* ==============================
+        DESKTOP EXTRA POLISH
+================================ */
+
+
+@media(min-width:1200px){
+
+
+    .book{
+
+        box-shadow:
+
+        0 45px 100px rgba(0,0,0,.65),
+
+        0 0 0 10px rgba(0,0,0,.08);
+
+    }
+
+
+}
+
+
+
+/* ==============================
+        REDUCE MOTION SUPPORT
+================================ */
+
+
+@media(prefers-reduced-motion:reduce){
+
+
+    *,
+    *::before,
+    *::after{
+
+
+        animation-duration:0.01ms;
+
+
+        transition-duration:0.01ms;
+
+
+    }
+
+
+}
+/* =================================================
+        RESPONSIVE DESIGN
+================================================= */
+
+
+/* ==============================
+        LARGE LAPTOPS
+================================ */
+
+
+@media(max-width:1200px){
+
+
+    .book{
+
+        width:90vw;
+
+        height:75vh;
+
+    }
+
+
+    .page{
+
+        padding:45px;
+
+    }
+
+
+    .content{
+
+        max-width:380px;
+
+    }
+
+
+}
+
+
+
+/* ==============================
+        TABLETS
+================================ */
+
+
+@media(max-width:900px){
+
+
+    body{
+
+        overflow:auto;
+
+        padding:30px 0;
+
+        align-items:flex-start;
+
+    }
+
+
+
+    .book{
+
+
+        width:92vw;
+
+
+        height:auto;
+
+
+        min-height:650px;
+
+
+    }
+
+
+
+    .page{
+
+        padding:35px;
+
+    }
+
+
+
+    .left h1{
+
+        font-size:42px;
+
+    }
+
+
+
+    .content h2{
+
+        font-size:34px;
+
+    }
+
+
+
+    .content p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+
+
+    .controls{
+
+
+        position:fixed;
+
+
+        bottom:20px;
+
+
+        width:100%;
+
+
+        gap:15px;
+
+
+    }
+
+
+
+    button{
+
+
+        padding:13px 25px;
+
+
+    }
+
+
+
+}
+
+
+
+/* ==============================
+        MOBILE PHONES
+================================ */
+
+
+@media(max-width:768px){
+
+
+    body{
+
+
+        overflow:auto;
+
+
+        display:block;
+
+
+        padding:20px 0 100px;
+
+
+    }
+
+
+
+    .book{
+
+
+        width:94vw;
+
+
+        margin:auto;
+
+
+        flex-direction:column;
+
+
+        height:auto;
+
+
+        min-height:0;
+
+
+    }
+
+
+
+    .spine{
+
+
+        display:none;
+
+
+    }
+
+
+
+    .page{
+
+
+        width:100%;
+
+
+        padding:35px 25px;
+
+
+    }
+
+
+
+    .left{
+
+
+        border-right:none;
+
+
+        border-bottom:
+
+        1px solid rgba(0,0,0,.1);
+
+
+        min-height:320px;
+
+
+    }
+
+
+
+    .left h1{
+
+
+        font-size:38px;
+
+
+    }
+
+
+
+    .left p{
+
+
+        font-size:17px;
+
+
+    }
+
+
+
+    .right{
+
+
+        min-height:400px;
+
+
+        align-items:flex-start;
+
+
+        padding-top:45px;
+
+
+    }
+
+
+
+    .content h2{
+
+
+        font-size:32px;
+
+
+        text-align:center;
+
+
+    }
+
+
+
+    .content p{
+
+
+        font-size:16px;
+
+
+        text-align:center;
+
+
+        line-height:1.8;
+
+
+    }
+
+
+
+    .number{
+
+
+        bottom:15px;
+
+
+        font-size:14px;
+
+
+    }
+
+
+
+    .left .number{
+
+
+        left:20px;
+
+
+    }
+
+
+
+    .right .number{
+
+
+        right:20px;
+
+
+    }
+
+
+
+
+    .controls{
+
+
+        position:fixed;
+
+
+        bottom:15px;
+
+
+        left:0;
+
+
+        transform:none;
+
+
+        width:100%;
+
+
+        padding:0 15px;
+
+
+        display:flex;
+
+
+        justify-content:center;
+
+
+        gap:10px;
+
+
+    }
+
+
+
+    button{
+
+
+        flex:1;
+
+
+        max-width:160px;
+
+
+        font-size:14px;
+
+
+        padding:12px 10px;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+/* ==============================
+        SMALL PHONES
+================================ */
+
+
+@media(max-width:480px){
+
+
+
+    .book{
+
+        width:96vw;
+
+    }
+
+
+
+    .page{
+
+
+        padding:25px 18px;
+
+
+    }
+
+
+
+    .left h1{
+
+
+        font-size:32px;
+
+
+    }
+
+
+
+    .left p{
+
+
+        font-size:15px;
+
+
+    }
+
+
+
+    .content h2{
+
+
+        font-size:27px;
+
+
+    }
+
+
+
+    .content p{
+
+
+        font-size:15px;
+
+
+        line-height:1.7;
+
+
+    }
+
+
+
+    .controls{
+
+
+        gap:8px;
+
+
+    }
+
+
+
+    button{
+
+
+        font-size:13px;
+
+
+        padding:11px 8px;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+/* ==============================
+        VERY SMALL PHONES
+================================ */
+
+
+@media(max-width:360px){
+
+
+
+    .left h1{
+
+
+        font-size:28px;
+
+
+    }
+
+
+
+    .content h2{
+
+
+        font-size:24px;
+
+
+    }
+
+
+
+    .content p{
+
+
+        font-size:14px;
+
+
+    }
+
+
+
+    button{
+
+
+        font-size:12px;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+/* ==============================
+        LANDSCAPE MOBILE
+================================ */
+
+
+@media(max-height:500px) and (orientation:landscape){
+
+
+
+    body{
+
+
+        padding:20px;
+
+
+    }
+
+
+
+    .book{
+
+
+        height:85vh;
+
+
+        flex-direction:row;
+
+
+    }
+
+
+
+    .page{
+
+
+        padding:25px;
+
+
+    }
+
+
+
+    .left h1{
+
+
+        font-size:30px;
+
+
+    }
+
+
+
+    .content h2{
+
+
+        font-size:28px;
+
+
+    }
+
+
+
+    .content p{
+
+
+        font-size:14px;
+
+
+    }
+
+
+
+    .controls{
+
+
+        bottom:10px;
+
+
+    }
+
+
+}
+
+
+
+/* ==============================
+        IPHONE SAFE AREA
+================================ */
+
+
+@supports(padding:max(0px)){
+
+
+    .controls{
+
+
+        padding-bottom:
+
+        max(10px, env(safe-area-inset-bottom));
+
+
+    }
+
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="book">
+
+<div class="spine"></div>
+
+<div class="page left">
+
+<h1>The Creator's Journal</h1>
+
+<p>
+
+Pages Never Meant To Be Found
+
+</p>
+
+<div class="number">
+
+I
+
+</div>
+
+</div>
+
+<div class="page right">
+
+<div class="content" id="content">
+
+<h2 id="pageTitle">Welcome</h2>
+
+<p id="pageText">
+
+If you're reading this...
+
+you've reached the final hidden place.
+
+There are no puzzles here.
+
+No secret codes.
+
+No mysteries left to solve.
+
+Just the stories behind everything you discovered.
+
+</p>
+
+</div>
+
+<div class="number">
+
+II
+
+</div>
+
+</div>
+
+</div>
+
+<div class="controls">
+
+<button id="prev">◀ Previous</button>
+
+<button id="next">Next ▶</button>
+
+</div>
+
+<script>
+
+const pages=[
+
+{
+
+title:"Welcome",
+
+text:`If you're reading this...
+
+you've reached the final hidden place.
+
+There are no puzzles here.
+
+No mysteries left to solve.
+
+Just the stories behind everything you discovered.`
+
+},
+
+{
+
+title:"Why LUMINA?",
+
+text:`Every project starts with a small idea.
+
+For me, LUMINA represents light.
+
+Even the smallest light can guide someone through darkness.
+
+I wanted my portfolio to feel calm, elegant, and welcoming.
+
+A place where creativity shines quietly.`
+
+},
+
+{
+
+title:"Why Nightfall?",
+
+text:`Nightfall was never meant to be found easily.
+
+It rewards curiosity.
+Every hidden page and every puzzle exists for one reason:
+
+to encourage people to keep exploring.
+If you're here,
+
+you never gave up.`
+
+},
+
+{
+
+title:"Why Mystery Websites?",
+
+text:`I've always enjoyed discovering hidden things.
+Instead of building an ordinary website,
+I wanted to create an adventure.
+Every click should make people wonder,
+"What happens next?"`
+
+},
+
+{
+
+title:"Why I Started Coding?",
+
+text:`At first,
+I simply wanted to know how websites were made.
+
+Curiosity slowly became learning.
+
+Learning became creating.
+
+Now coding has become one of my favorite ways to bring ideas to life.`
+
+},
+
+{
+
+title:"What's Next?",
+
+text:`I still have so much to learn.
+Bigger websites.
+Better designs.
+Games.
+Artificial Intelligence.
+
+This journal marks the beginning,
+not the end.`
+
+},
+
+{
+
+title:"Conclusion",
+
+text:`Every page you explored
+every hidden clue
+every mystery you solved
+led to this moment.
+This journal isn't about proving how much I know.
+It's about sharing what I've learned
+celebrating curiosity
+and reminding myself that every great journey begins with a single idea.
+The mysteries may have ended,
+but the journey of creating them never truly will.`
+},
+
+{
+title:"One Last Thing...",
+text:`LUMINA,Mystery Websites,and Nightfall
+were never just websites.
+They were pieces of my imagination,my curiosity,
+and my journey as a creator.
+If this adventure made you smile,wonder,or explore just a 
+little longer,then every moment spent creating it was worth it.
+Thank you for visiting.
+Keep wondering.
+Keep creating.
+— Umme Kulsum`
+}
+];
+
+let current=0;
+
+const title=document.getElementById("pageTitle");
+const text=document.getElementById("pageText");
+const content=document.getElementById("content");
+
+const next=document.getElementById("next");
+const prev=document.getElementById("prev");
+
+prev.disabled=true;
+
+function updatePage(){
+
+content.classList.add("fade-out");
+
+setTimeout(()=>{
+
+title.textContent=pages[current].title;
+
+text.innerHTML=pages[current].text.replace(/\n/g,"<br>");
+
+content.classList.remove("fade-out");
+
+content.classList.add("fade-in");
+
+setTimeout(()=>{
+
+content.classList.remove("fade-in");
+
+},400);
+
+prev.disabled=current===0;
+
+next.disabled=current===pages.length-1;
+
+},400);
+
+}
+
+next.onclick=()=>{
+
+if(current<pages.length-1){
+
+current++;
+
+updatePage();
+
+}
+
+}
+
+prev.onclick=()=>{
+
+if(current>0){
+
+current--;
+
+updatePage();
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
